@@ -1,0 +1,48 @@
+{
+  "id": "memory-mirix",
+  "kind": "memory",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "apiUrl": {
+        "type": "string",
+        "description": "MIRIX API base URL",
+        "default": "http://localhost:8531"
+      },
+      "apiKey": {
+        "type": "string",
+        "description": "MIRIX API key (or use ${MIRIX_API_KEY} env var)"
+      },
+      "configPath": {
+        "type": "string",
+        "description": "Path to ~/.mirix/config.json (fallback for apiKey/apiUrl)"
+      },
+      "autoStore": {
+        "type": "boolean",
+        "description": "Automatically store important info from conversations",
+        "default": false
+      },
+      "markdownBackup": {
+        "type": "boolean",
+        "description": "Also write daily markdown logs as backup",
+        "default": true
+      }
+    }
+  },
+  "uiHints": {
+    "apiKey": {
+      "label": "MIRIX API Key",
+      "sensitive": true,
+      "help": "API key from ~/.mirix/config.json, or use ${MIRIX_API_KEY}"
+    },
+    "apiUrl": {
+      "label": "MIRIX API URL",
+      "placeholder": "http://localhost:8531"
+    },
+    "markdownBackup": {
+      "label": "Markdown Backup",
+      "help": "Keep writing daily memory/*.md files as human-readable backup"
+    }
+  }
+}
